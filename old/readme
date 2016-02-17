@@ -1,0 +1,23 @@
+resize:
+	resize.store.js: хранилище данных ресайза
+
+scroll:
+	scroll.store.js: хранилище данных скролла
+
+popup:
+	popup.view.js (классы можне переписать. по-умолчанию .popup и .active)
+	popup.store.js
+	popup.controls.view.js
+	popup.close.view.js
+
+menu:
+	menu.view.js
+	menu.store.js
+	menu-scroll.view.js (закрытие по скроллу)
+	menu-controlls.view.js
+
+form:
+	form.view.js
+	form.store.js
+slider:
+	зависим от swipe.js
