@@ -39,10 +39,23 @@ define(['dispatcher', 'resize/resize.store'], function(dispatcher, store) {
 
 	var _add = function(items, element) {
 		var id = element.getAttribute('data-id');
-		var shift1000 = element.getAttribute('data-shift1000') || 0;
-		var shift640  = element.getAttribute('data-shift640') || 0;
-		var shift0    = element.getAttribute('data-shift0') || 0;
+		var shift1000 = element.getAttribute('data-shift1000') || false;
+		var shift640  = element.getAttribute('data-shift640') || false;
+		var shift0    = element.getAttribute('data-shift0') || false;
 
+		if (shift0 === false) {
+			shift0 = 0;
+		}
+		if (shift640 === false) {
+			shift640 = shift0;
+		}
+		if (shift1000 === false) {
+			shift1000 = shift640;
+		}
+
+		shift1000 = parseInt(shift1000);
+		shift640  = parseInt(shift640);
+		shift0    = parseInt(shift0);
 
 		if (!id) {
 			id = idName + idNum;
