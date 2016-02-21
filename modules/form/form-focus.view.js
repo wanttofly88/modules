@@ -11,6 +11,12 @@ define(['dispatcher'], function(dispatcher) {
 	var _add = function(items, element) {
 		var id = element.getAttribute('data-id');
 
+		if (element.value) {
+			element.parentNode.classList.add('not-empty');
+		} else {
+			element.parentNode.classList.remove('not-empty');
+		}
+
 		element.addEventListener('focus', function() {
 			element.parentNode.classList.remove('error');
 			element.parentNode.classList.add('focus');
