@@ -229,7 +229,7 @@ define(['dispatcher', 'first-scroll/first-scroll.store', 'scroll/scroll.store'],
 	}
 
 	var init = function() {
-		if (navigator.userAgent.indexOf('MSIE') > -1)   reverseScrolling = true;
+		if ((navigator.appName === 'Microsoft Internet Explorer') || ((navigator.appName === 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) !== null))) reverseScrolling = true;
 		if (navigator.userAgent.indexOf("Safari") > -1) reverseScrolling = true;
 		if (navigator.userAgent.indexOf('Chrome') > -1) reverseScrolling = false;
 
