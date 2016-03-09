@@ -75,7 +75,7 @@ define(['dispatcher', 'slider/slider.store', 'swipe'], function(dispatcher, stor
 		}
 
 		if (!speed) {
-			speed = 700;
+			speed = 600;
 		} else {
 			speed = parseInt(speed);
 		}
@@ -111,7 +111,8 @@ define(['dispatcher', 'slider/slider.store', 'swipe'], function(dispatcher, stor
 			id: id,
 			continuous: continuous,
 			total: total,
-			index: index
+			index: index,
+			speed: speed
 		});
 
 		if (index > 0) {

@@ -39,6 +39,17 @@ define(['dispatcher', 'slider/slider.store'], function(dispatcher, sliderStore) 
 					item.slides[i].classList.remove('to-left');
 				}
 			}
+			if (itemData.total >= 2) {
+				console.log(1);
+				if (item.current === 0) {
+					item.slides[itemData.total].classList.remove('to-right');
+					item.slides[itemData.total].classList.add('to-left');
+				}
+				if (item.current === itemData.total) {
+					item.slides[0].classList.remove('to-left');
+					item.slides[0].classList.add('to-right');
+				}
+			}
 		}
 
 		for (var id in items) {

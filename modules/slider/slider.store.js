@@ -11,7 +11,7 @@ define(['dispatcher'], function(dispatcher) {
 				id: e.id,
 				total: e.total || 0,
 				index: e.index || 0,
-				continious: e.continious || false
+				continuous: e.continuous || false
 			}
 		}
 
@@ -25,7 +25,7 @@ define(['dispatcher'], function(dispatcher) {
 			if (!items.hasOwnProperty(e.id)) return;
 
 			items[e.id].index++;
-			if (items[e.id].continious) {
+			if (items[e.id].continuous) {
 				if (items[e.id].index > items[e.id].total) items[e.id].index = 0;
 			} else {
 				if (items[e.id].index > items[e.id].total) items[e.id].index = items[e.id].total;
@@ -38,7 +38,7 @@ define(['dispatcher'], function(dispatcher) {
 			if (!items.hasOwnProperty(e.id)) return;
 
 			items[e.id].index--;
-			if (items[e.id].continious) {
+			if (items[e.id].continuous) {
 				if (items[e.id].index < 0) items[e.id].index = items[e.id].total;
 			} else {
 				if (items[e.id].index < 0) items[e.id].index = 0;
